@@ -33,7 +33,7 @@ function runEnter() {
     console.log(filteredData);
 
     // Create a table variable to append the html table
-    var tbody = d3.select("filtered-table");
+    var tbody = d3.select("#filtered-table");
     console.log(tbody)
     // Remove any previous child elements from the table 
     tbody.html("");
