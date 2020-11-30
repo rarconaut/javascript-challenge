@@ -9,6 +9,15 @@ var button = d3.select("#filter-btn");
 // Select the date form
 var form = d3.select("#form");
 
+// Select the different selectors
+var selectCity = d3.select("selectCity")
+var selectState = d3.select("selectState")
+var selectCountry = d3.select("selectCountry")
+var selectShape = d3.select("selectShape")
+
+
+
+
 // Create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
