@@ -34,12 +34,13 @@ function runEnter() {
 
     // Create a table variable to append the html table
     var tbody = d3.select("filtered-table");
-
+    console.log(tbody)
     // Remove any previous child elements from the table 
     tbody.html("");
 
     // Append rows to table
     filteredData.forEach(ufo => {
+        console.log(ufo)
         var row =  tbody.append("tr");
         Object.entries(ufo).forEach(([key, value]) => {
             var cell = row.append("td");
