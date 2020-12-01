@@ -16,11 +16,13 @@ var selectCountry = d3.select("selectCountry")
 var selectShape = d3.select("selectShape")
 
 
-
-
 // Create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
+selectCity.on("change", getData);
+selectState.on("change", getData);
+selectCountry.on("change", getData);
+selectShape.on("change", getData);
 
 // Event hanlder function for the form
 function runEnter() {
@@ -59,3 +61,10 @@ function runEnter() {
 
 };
 
+function getData() {
+    // Prevent page from refreshing
+    d3.event.preventDefault();
+
+    // Conditional to select input element, get raw html node, and assign inputElement variable
+    var inputElement = d3.select("#datetime");
+}
