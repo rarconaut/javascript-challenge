@@ -10,19 +10,19 @@ var button = d3.select("#filter-btn");
 var form = d3.select("#form");
 
 // Select the different selectors
-var selectCity = d3.select("selectCity")
-var selectState = d3.select("selectState")
-var selectCountry = d3.select("selectCountry")
-var selectShape = d3.select("selectShape")
+var selectCity = d3.select("#selectCity")
+var selectState = d3.select("#selectState")
+var selectCountry = d3.select("#selectCountry")
+var selectShape = d3.select("#selectShape")
 
 
 // Create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
-selectCity.on("change", getData);
-selectState.on("change", getData);
-selectCountry.on("change", getData);
-selectShape.on("change", getData);
+selectCity.on("change", runEnter);
+selectState.on("change", runEnter);
+selectCountry.on("change", runEnter);
+selectShape.on("change", runEnter);
 
 // Event hanlder function for the form
 function runEnter() {
@@ -30,12 +30,16 @@ function runEnter() {
     d3.event.preventDefault();
 
     // // Select input element and get raw html node
-    var inputElement = d3.select("#datetime");
+    // var inputElement = d3.select("#datetime");
 
     // Get the value of the input element
-    var inputValue = inputElement.property("value");
+    var inputDate = d3.select("#datetime").property("value");
     
-    console.log(inputValue);
+    var inputCity = d3.select("#selectCity").property("value");
+    var inputState = d3.select("#selectState").property("value");
+    var inputCountry = d3.select("#selectCountry").property("value");
+    var inputShape = d3.select("#selectShape").property("value");
+    console.log(inputDate, inputCity, inputState, inputCountry, inputShape);
     // console.log(tableData); 
 
     // Filter the data based on user input
@@ -61,10 +65,14 @@ function runEnter() {
 
 };
 
-function getData() {
-    // Prevent page from refreshing
-    d3.event.preventDefault();
+// function getData() {
+//     // Prevent page from refreshing
+//     d3.event.preventDefault();
 
-    // Conditional to select input element, get raw html node, and assign inputElement variable
-    var inputElement = d3.select("#datetime");
+//     // Conditional to select input element, get raw html node, and assign inputElement variable
+//     var inputValue2 = d3.select("#selectCity").property("value");
+//     var inputValue3 = d3.select("#selectState").property("value");
+//     var inputValue4 = d3.select("#selectCountry").property("value");
+//     var inputValue5 = d3.select("#selectShape").property("value");
+//     console.log(inputValue2, inputValue3, inputValue4, inputValue5);
 }
