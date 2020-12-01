@@ -39,11 +39,17 @@ function runEnter() {
     var inputState = d3.select("#selectState").property("value");
     var inputCountry = d3.select("#selectCountry").property("value");
     var inputShape = d3.select("#selectShape").property("value");
+
     console.log(inputDate, inputCity, inputState, inputCountry, inputShape);
     // console.log(tableData); 
 
     // Filter the data based on user input
-    var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
+    var filteredData = tableData.filter(ufo => 
+        ufo.datetime === inputDate ||
+        ufo.city === inputCity ||
+        ufo.state === inputState || 
+        ufo.country === inputCountry ||
+        ufo.shape === inputShape);
 
     console.log(filteredData);
 
@@ -75,4 +81,4 @@ function runEnter() {
 //     var inputValue4 = d3.select("#selectCountry").property("value");
 //     var inputValue5 = d3.select("#selectShape").property("value");
 //     console.log(inputValue2, inputValue3, inputValue4, inputValue5);
-}
+// }
