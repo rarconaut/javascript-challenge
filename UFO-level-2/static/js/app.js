@@ -43,13 +43,21 @@ function runEnter() {
     console.log(inputDate, inputCity, inputState, inputCountry, inputShape);
     // console.log(tableData); 
 
+    filters = []
+
     // Filter the data based on user input
     var filteredData = tableData.filter(ufo => 
-        ufo.datetime === inputDate ||
-        ufo.city === inputCity ||
-        ufo.state === inputState || 
-        ufo.country === inputCountry ||
-        ufo.shape === inputShape);
+        // ufo.datetime === inputDate
+        // && ufo.city === inputCity
+        // && ufo.state === inputState
+        // && ufo.country === inputCountry
+        // && ufo.shape === inputShape);
+
+        ufo.datetime === inputDate
+        || ufo.city === inputCity
+        || ufo.state === inputState
+        || ufo.country === inputCountry
+        || ufo.shape === inputShape);
 
     console.log(filteredData);
 
